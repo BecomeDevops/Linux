@@ -103,3 +103,15 @@ tree
 
 ex: tree aws
 aws is a directory
+----------------------------------
+ you want to clean empty directories, find command can make the job easy:
+
+$ find . -type d -empty -exec rmdir -v {} +
+
+The -type d option searches for directories, -empty select empty ones and -exec rmdir {} executes the rmdir command to delete them.
+
+The rmdir command ensures that the directory is empty before deleting it.
+
+Alternatively, you can also use this command to complete the same task:
+
+$ find . -type d -empty -delete
